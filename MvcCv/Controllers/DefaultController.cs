@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
@@ -31,6 +32,16 @@ namespace MvcCv.Controllers
         {
             var yetenekler=db.TblYeteneklerim.ToList();
             return PartialView(yetenekler);
+        }
+        public PartialViewResult Hobi()
+        { 
+            var hobiler=db.TblHobilerim.ToList();
+            return PartialView(hobiler);
+        }
+        public PartialViewResult Sertifika()
+        {
+            var sertifikalar = db.TblSertifikalarim.ToList();
+            return PartialView(sertifikalar);
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAdmin">
           <Key>
             <PropertyRef Name="ID" />
@@ -20,7 +20,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
           <Property Name="AltBaslik" Type="nvarchar" MaxLength="100" />
-          <Property Name="Aciklama" Type="nvarchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="200" />
           <Property Name="Tarih" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TblEgitimlerim">
@@ -31,8 +31,6 @@
           <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
           <Property Name="AltBaslik1" Type="nvarchar" MaxLength="100" />
           <Property Name="AltBaslik2" Type="nvarchar" MaxLength="100" />
-          <Property Name="GNO" Type="nvarchar" MaxLength="10" />
-          <Property Name="Tarih" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TblHakkimda">
           <Key>
@@ -71,7 +69,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
+          <Property Name="Aciklama1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Aciklama2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Aciklama3" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TblYeteneklerim">
           <Key>
@@ -90,8 +90,7 @@
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -110,7 +109,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AltBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblEgitimlerim">
@@ -153,13 +152,6 @@
           <Property Name="Mesaj" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="TblSertifikalarim">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TblYeteneklerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -174,9 +166,18 @@
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
           <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" />
           <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" />
-          <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
+          <EntitySet Name="TblSertifikalarim" EntityType="DbCvModel.TblSertifikalarim" />
         </EntityContainer>
+        <EntityType Name="TblSertifikalarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -247,19 +248,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblSertifikalarim">
-            <EntityTypeMapping TypeName="DbCvModel.TblSertifikalarim">
-              <MappingFragment StoreEntitySet="TblSertifikalarim">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblYeteneklerim">
             <EntityTypeMapping TypeName="DbCvModel.TblYeteneklerim">
               <MappingFragment StoreEntitySet="TblYeteneklerim">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSertifikalarim">
+            <EntityTypeMapping TypeName="DbCvModel.TblSertifikalarim">
+              <MappingFragment StoreEntitySet="TblSertifikalarim">
+                <ScalarProperty Name="Aciklama3" ColumnName="Aciklama3" />
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

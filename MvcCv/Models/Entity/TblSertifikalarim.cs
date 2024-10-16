@@ -15,6 +15,8 @@ namespace MvcCv.Models.Entity
     public partial class TblSertifikalarim
     {
         public int ID { get; set; }
-        public string Aciklama { get; set; }
+        public string Aciklama1 { get; set; }
+        public string Aciklama2 { get; set; }
+        public string Aciklama3 { get; set; }
     }
 }

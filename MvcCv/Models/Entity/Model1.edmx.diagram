@@ -11,8 +11,8 @@
         <EntityTypeShape EntityType="DbCvModel.TblHakkimda" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblHobilerim" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblIletisim" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbCvModel.TblSertifikalarim" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblYeteneklerim" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbCvModel.TblSertifikalarim" Width="1.5" PointX="6.625" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

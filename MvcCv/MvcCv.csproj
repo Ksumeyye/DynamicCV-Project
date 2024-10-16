@@ -252,6 +252,8 @@
     <Content Include="Views\Default\Deneyim.cshtml" />
     <Content Include="Views\Default\Egitim.cshtml" />
     <Content Include="Views\Default\Yetenek.cshtml" />
+    <Content Include="Views\Default\Hobi.cshtml" />
+    <Content Include="Views\Default\Sertifika.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
