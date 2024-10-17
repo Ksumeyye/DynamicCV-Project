@@ -53,16 +53,25 @@
           <Property Name="Aciklama1" Type="nvarchar" MaxLength="500" />
           <Property Name="Aciklama2" Type="nvarchar" MaxLength="500" />
         </EntityType>
-        <EntityType Name="TblIletisim">
+        <EntityType Name="Tbliletisim">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AdSoyad" Type="nvarchar" MaxLength="100" />
-          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
-          <Property Name="Konu" Type="nvarchar" MaxLength="100" />
-          <Property Name="Mesaj" Type="nvarchar" MaxLength="100" />
+          <Property Name="Adsoyad" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="100" />
+          <Property Name="Mesaj" Type="varchar" MaxLength="1000" />
           <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="TblProjelerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="250" />
+          <Property Name="Aciklama1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Aciklama2" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TblSertifikalarim">
           <Key>
@@ -86,7 +95,8 @@
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbliletisim" EntityType="Self.Tbliletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProjelerim" EntityType="Self.TblProjelerim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -141,17 +151,6 @@
           <Property Name="Aciklama1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TblIletisim">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mesaj" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Tarih" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="TblYeteneklerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -165,9 +164,10 @@
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" />
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
           <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" />
-          <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
           <EntitySet Name="TblSertifikalarim" EntityType="DbCvModel.TblSertifikalarim" />
+          <EntitySet Name="TblProjelerim" EntityType="DbCvModel.TblProjelerim" />
+          <EntitySet Name="Tbliletisim" EntityType="DbCvModel.Tbliletisim" />
         </EntityContainer>
         <EntityType Name="TblSertifikalarim">
           <Key>
@@ -177,6 +177,26 @@
           <Property Name="Aciklama1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblProjelerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbliletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adsoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -236,18 +256,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblIletisim">
-            <EntityTypeMapping TypeName="DbCvModel.TblIletisim">
-              <MappingFragment StoreEntitySet="TblIletisim">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="Konu" ColumnName="Konu" />
-                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblYeteneklerim">
             <EntityTypeMapping TypeName="DbCvModel.TblYeteneklerim">
               <MappingFragment StoreEntitySet="TblYeteneklerim">
@@ -262,6 +270,28 @@
                 <ScalarProperty Name="Aciklama3" ColumnName="Aciklama3" />
                 <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
                 <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProjelerim">
+            <EntityTypeMapping TypeName="DbCvModel.TblProjelerim">
+              <MappingFragment StoreEntitySet="TblProjelerim">
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbliletisim">
+            <EntityTypeMapping TypeName="DbCvModel.Tbliletisim">
+              <MappingFragment StoreEntitySet="Tbliletisim">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Adsoyad" ColumnName="Adsoyad" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

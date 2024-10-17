@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
@@ -43,5 +42,24 @@ namespace MvcCv.Controllers
             var sertifikalar = db.TblSertifikalarim.ToList();
             return PartialView(sertifikalar);
         }
+        public PartialViewResult Proje()
+        {
+            var projeler=db.TblProjelerim.ToList();
+            return PartialView(projeler);
+        }
+        [HttpGet]
+        public PartialViewResult Iletisim()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult Iletisim(Tbliletisim iletisim)
+        {
+            iletisim.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.Tbliletisim.Add(iletisim);
+            db.SaveChanges();
+            return PartialView();
+        }
+
     }
 }

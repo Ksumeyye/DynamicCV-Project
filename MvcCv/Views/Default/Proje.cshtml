@@ -1,0 +1,12 @@
+﻿<div class="resume-section-content">
+    <h2 class="mb-5">PROJELERİM</h2>
+    @foreach (var x in Model)
+    {
+        <p><strong>@x.Baslik</strong></p>
+        <p class="mb-0"><strong>Proje Açıklaması:</strong> @x.Aciklama1</p>
+        <p class="mb-0">@x.Aciklama2</p>
+        <br />
+    }
+    <br/>
+    <p><strong><em>Geliştirdiğim tüm projelere github hesabımdan ulaşabilirsiniz.</em></strong></p>
+</div>
