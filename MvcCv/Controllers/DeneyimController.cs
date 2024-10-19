@@ -11,10 +11,10 @@ namespace MvcCv.Controllers
     public class DeneyimController : Controller
     {
         // GET: Deneyim
-        DeneyimRepository repo=new DeneyimRepository(); //generic repositorydeki değerleri burada kalıtım yaparak aldım.
+        DeneyimRepository repo = new DeneyimRepository(); //generic repositorydeki değerleri burada kalıtım yaparak aldım.
         public ActionResult Index()
         {
-            var deneyimler=repo.List();
+            var deneyimler = repo.List();
             return View(deneyimler);
         }
         [HttpGet]
@@ -30,15 +30,26 @@ namespace MvcCv.Controllers
         }
         public ActionResult DeneyimSil(int id)
         {
-            TblDeneyimlerim t=repo.Find(x=>x.ID==id);
+            TblDeneyimlerim t = repo.Find(x => x.ID == id);
             repo.TDelete(t);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult DeneyimGetir(int id)
         {
-            TblDeneyimlerim t=repo.Find(x=> x.ID==id);
+            TblDeneyimlerim t = repo.Find(x => x.ID == id);
             return View(t);
+        }
+        [HttpPost]
+        public ActionResult DeneyimGetir(TblDeneyimlerim p)
+        {
+            TblDeneyimlerim t = repo.Find(x => x.ID == p.ID);
+            t.Baslik = p.Baslik;
+            t.AltBaslik = p.AltBaslik;
+            t.Aciklama= p.Aciklama;
+            t.Tarih = p.Tarih;
+            repo.TUpdate(t);
+            return RedirectToAction("Index");
         }
     }
 }
