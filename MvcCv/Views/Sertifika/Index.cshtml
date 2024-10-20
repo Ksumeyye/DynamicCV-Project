@@ -21,36 +21,52 @@
                                             <!-- The timeline -->
                                             <div class="timeline timeline-inverse">
                                                 <!-- timeline time label -->
-                                                @foreach(var item in Model)
+                                                @foreach (var item in Model)
                                                 {
-                                                <div class="time-label">
-                                                    <span class="bg-success">
-                                                        @item.Tarih
-                                                    </span>
-                                                </div>
-                                                <!-- /.timeline-label -->
-                                                <!-- timeline item -->
-                                                <div>
-                                                    <i class="fas fa-comment bg-primary"></i>
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-body"><strong>
-                                                        @item.Aciklama1</strong>
+                                                    if (item.ID % 2 == 0)
+                                                    {
+
+
+                                                        <div class="time-label">
+                                                            <a href="/Sertifika/SertifikaGetir/@item.ID" class="btn btn-dark">
+                                                                <span class="bg-gray-light">
+                                                                    @item.Tarih
+                                                                </span>
+                                                            </a>
                                                         </div>
-                                                        <div class="timeline-body">
-                                                            @item.Aciklama2
+                                                    }
+                                                    else if (item.ID % 2 == 1)
+                                                    {
+                                                        <div class="time-label">
+                                                            <a href="/Sertifika/SertifikaGetir/@item.ID" class="btn btn-danger">
+                                                                <span class="bg-light">
+                                                                    @item.Tarih
+                                                                </span>
+                                                            </a>
                                                         </div>
-                                                        <div class="timeline-body">
-                                                            <strong>Teknolojiler:</strong> @item.Aciklama3
-                                                        </div>
-                                                        <br/>
-                                                        <div class="timeline-footer">
-                                                            <a href="#" class="btn btn-primary btn-sm">Düzenle</a>
-                                                            <a href="#" class="btn btn-danger btn-sm">Sil</a>
+                                                    }
+
+                                                    <!-- /.timeline-label --><!-- timeline item -->
+
+                                                    <div>
+                                                        <i class="fas fa-comment bg-primary"></i>
+                                                        <div class="timeline-item">
+                                                            <div class="timeline-body">
+                                                                <strong>
+                                                                    @item.Aciklama1
+                                                                </strong>
+                                                            </div>
+                                                            <div class="timeline-body">
+                                                                @item.Aciklama2
+                                                            </div>
+                                                            <div class="timeline-body">
+                                                                <strong>Teknolojiler:</strong> @item.Aciklama3
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>  
                                                 }
                                             </div>
+                                            <a href="/Sertifika/YeniSertifika/" class="btn btn-outline-secondary">Yeni Sertifika Girişi</a>
                                         </div>
                                     </div>
                                 </div><!-- /.card-body -->

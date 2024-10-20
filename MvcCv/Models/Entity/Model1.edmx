@@ -40,7 +40,6 @@
           <Property Name="Ad" Type="nvarchar" MaxLength="30" />
           <Property Name="Soyad" Type="nvarchar" MaxLength="30" />
           <Property Name="Adres" Type="nvarchar" MaxLength="100" />
-          <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
           <Property Name="Mail" Type="nvarchar" MaxLength="50" />
           <Property Name="Aciklama" Type="nvarchar(max)" />
           <Property Name="Resim" Type="nvarchar" MaxLength="100" />
