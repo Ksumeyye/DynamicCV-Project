@@ -18,5 +18,6 @@ namespace MvcCv.Models.Entity
         public string Aciklama1 { get; set; }
         public string Aciklama2 { get; set; }
         public string Aciklama3 { get; set; }
+        public string Tarih { get; set; }
     }
 }

@@ -7,15 +7,17 @@
 <br/>
 <h2>Deneyim Listesi</h2>
 <table class="table table-bordered">
-    <table>
+    <thead>
         <tr>
             <th>ID</th>
-            <th>Başlık</th>
-            <th>Alt Başlık</th>
+            <th>Şirket İsmi</th>
+            <th>Unvan</th>
             <th>Tarih</th>
             <th>Sil</th>
             <th>Düzenle</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach (var item in Model)
         {
             <tr>
@@ -24,9 +26,9 @@
                 <td>@item.AltBaslik</td>
                 <td>@item.Tarih</td>
                 <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a></td>
-                <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-warning">Düzenle</a></td>
+                <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-dark">Düzenle</a></td>
             </tr>
         }
-    </table>
+    </tbody>
 </table>
 <a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
