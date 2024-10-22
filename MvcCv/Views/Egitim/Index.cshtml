@@ -27,17 +27,14 @@
                 <td>@item.AltBaslik2</td>
 
                 <td>
-                    <a class="btn btn-danger btn-sm" href="/Egitim/EgitimSil/@item.ID">
-                        <i class="fas fa-trash">
-                        </i>
-                        Sil
+                    <a href="/Egitim/EgitimDuzenle/@item.ID" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i> Düzenle
                     </a>
                 </td>
+
                 <td>
-                    <a class="btn btn-info btn-sm" href="/Egitim/EgitimDuzenle/@item.ID">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Düzenle
+                    <a href="/Egitim/EgitimSil/@item.ID" class="btn btn-danger btn-sm" onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?');">
+                        <i class="fas fa-trash"></i> Sil
                     </a>
                 </td>
             </tr>

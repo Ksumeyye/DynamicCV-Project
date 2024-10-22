@@ -1,0 +1,27 @@
+﻿@model MvcCv.Models.Entity.TblProjelerim
+@{
+    ViewBag.Title = "ProjeDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Proje Düzenleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Proje İsmi")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Proje Hakkında")
+    @Html.TextBoxFor(x => x.Aciklama1, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Kullanılan Yapılar & Teknolojiler")
+    @Html.TextBoxFor(x => x.Aciklama2, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Proje URL")
+    @Html.TextBoxFor(x => x.ProjeUrl, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

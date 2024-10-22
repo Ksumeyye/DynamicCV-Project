@@ -1,0 +1,77 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblProjelerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Projelerim</h3>
+                            </div>
+                            <div class="card-body">
+                                <a href="/Proje/YeniProje/" class="btn btn-primary">Yeni Proje Ekle</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 1px">#</th>
+                                            <th>Proje İsmi</th>
+                                            <th>Proje Hakkında</th>
+                                            <th>Kullanılan Yapılar & Teknolojiler</th>
+                                            <th>Proje URL</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < Model.Count; i++)
+                                        {
+                                            var item = Model[i];
+                                            <tr>
+                                                <td>@(i + 1)</td>
+                                                <td>@item.Baslik</td>
+                                                <td>@item.Aciklama1</td>
+                                                <td>@item.Aciklama2</td>
+                                                <td>@item.ProjeUrl</td>
+                                                <td>
+                                                    <a href="/Proje/ProjeDuzenle/@item.ID" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-edit"></i> Düzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="/Proje/ProjeSil/@item.ID" class="btn btn-danger btn-sm" onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?');">
+                                                        <i class="fas fa-trash"></i> Sil
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

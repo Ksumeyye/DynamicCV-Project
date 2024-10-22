@@ -11,11 +11,11 @@ namespace MvcCv.Controllers
     public class iletisimController : Controller
     {
         // GET: iletisim
-        GenericRepository<Tbliletisim> repo=new GenericRepository<Tbliletisim>();
+        GenericRepository<Tbliletisim> repo = new GenericRepository<Tbliletisim>();
         public ActionResult Index()
         {
             var mesajlar = repo.List();
-            return View();
+            return View(mesajlar);
         }
     }
 }

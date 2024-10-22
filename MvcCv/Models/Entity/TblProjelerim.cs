@@ -18,5 +18,6 @@ namespace MvcCv.Models.Entity
         public string Baslik { get; set; }
         public string Aciklama1 { get; set; }
         public string Aciklama2 { get; set; }
+        public string ProjeUrl { get; set; }
     }
 }

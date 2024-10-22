@@ -71,6 +71,7 @@
           <Property Name="Baslik" Type="nvarchar" MaxLength="250" />
           <Property Name="Aciklama1" Type="nvarchar" MaxLength="250" />
           <Property Name="Aciklama2" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProjeUrl" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TblSertifikalarim">
           <Key>
@@ -187,6 +188,7 @@
           <Property Name="Baslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProjeUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tbliletisim">
           <Key>
@@ -279,6 +281,7 @@
           <EntitySetMapping Name="TblProjelerim">
             <EntityTypeMapping TypeName="DbCvModel.TblProjelerim">
               <MappingFragment StoreEntitySet="TblProjelerim">
+                <ScalarProperty Name="ProjeUrl" ColumnName="ProjeUrl" />
                 <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
                 <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />

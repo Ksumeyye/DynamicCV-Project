@@ -1,0 +1,28 @@
+﻿@model MvcCv.Models.Entity.TblProjelerim
+@{
+    ViewBag.Title = "YeniProje";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Yeni Proje Ekleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Proje İsmi")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", placeholder = "Projenin ismini giriniz." })
+    <br />
+    <br />
+    @Html.Label("Proje Hakkında")
+    @Html.TextBoxFor(x => x.Aciklama1, new { @class = "form-control", placeholder = "Proje hakkında bilgi veriniz." })
+    <br />
+    <br />
+    @Html.Label("Kullanılan Yapılar & Teknolojiler")
+    @Html.TextBoxFor(x => x.Aciklama2, new { @class = "form-control", placeholder = "Projede kullanılan yapıları ya da teknolojileri yazınız." })
+    <br />
+    <br />
+    @Html.Label("Proje URL")
+    @Html.TextBoxFor(x => x.ProjeUrl, new { @class = "form-control", placeholder = "Proje URL'sini yazınız." })
+    <br />
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>
+

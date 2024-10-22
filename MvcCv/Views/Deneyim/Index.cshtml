@@ -13,8 +13,8 @@
             <th>Şirket İsmi</th>
             <th>Unvan</th>
             <th>Tarih</th>
-            <th>Sil</th>
             <th>Düzenle</th>
+            <th>Sil</th>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +25,9 @@
                 <td>@item.Baslik</td>
                 <td>@item.AltBaslik</td>
                 <td>@item.Tarih</td>
-                <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-dark">Düzenle</a></td>
+                <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil</a></td>
+
             </tr>
         }
     </tbody>

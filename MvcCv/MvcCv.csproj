@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HobiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\iletisimController.cs" />
+    <Compile Include="Controllers\ProjeController.cs" />
     <Compile Include="Controllers\SertifikaController.cs" />
     <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2364,7 +2365,7 @@
     <Content Include="Views\Default\Sertifika.cshtml" />
     <Content Include="Views\Default\Proje.cshtml" />
     <Content Include="Views\Default\iletisim.cshtml" />
-    <Content Include="Views\Hakkımda\Index.cshtml" />
+    <Content Include="Views\Hakkimda\Index.cshtml" />
     <Content Include="Views\Deneyim\Index.cshtml" />
     <Content Include="Views\Deneyim\DeneyimEkle.cshtml" />
     <Content Include="Views\Deneyim\DeneyimGetir.cshtml" />
@@ -2379,6 +2380,9 @@
     <Content Include="Views\Sertifika\YeniSertifika.cshtml" />
     <Content Include="Views\iletisim\Index.cshtml" />
     <Content Include="Views\Hobi\Index.cshtml" />
+    <Content Include="Views\Proje\Index.cshtml" />
+    <Content Include="Views\Proje\YeniProje.cshtml" />
+    <Content Include="Views\Proje\ProjeDuzenle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
