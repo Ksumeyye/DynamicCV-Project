@@ -25,7 +25,7 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult EgitimEkle(TblEgitimlerim p)
         {
-            if(!ModelState.IsValid) //Eğer ki ben validasyonlardaki p'yi ezecek bir hamle yaptıysam bana Eğitim EKleyi geri döndür, işlemi gerçekleştirme.
+            if(!ModelState.IsValid) //Eğerki ben validasyonlardaki p'yi ezecek bir hamle yaptıysam bana Eğitim EKleyi geri döndür, işlemi gerçekleştirme.
             {
                 return View("EgitimEkle");
             }
