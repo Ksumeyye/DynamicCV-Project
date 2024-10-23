@@ -5,6 +5,7 @@ Admin, CRUD İşlemlerini yapabilir aynı zamanda var olan verileri aktif veya p
 Admin kısmında Modal Popup üzerinden ekleme işlemleri<br/>
 UI tarafındaki İletişim Sayfasından Admin'e mesaj gönderme<br/>
 Validation Kontrolleri Required<br/>
+Responsibility Design Pattern<br/>
 Db First -ORM aracı olarak Entity Framework -Veri tabanı SQL Server<br/>
 LogOut</br>
 Authorize gibi teknolojileri kullandım.<br/>
