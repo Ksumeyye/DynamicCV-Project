@@ -8,6 +8,7 @@ using MvcCv.Models.Entity;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
@@ -19,7 +20,7 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult SosyalMedya()
         {
-            var sosyalmedya = db.TblSosyalMedya.ToList();
+            var sosyalmedya = db.TblSosyalMedya.Where(x=>x.Durum==true).ToList();
             return PartialView(sosyalmedya);
         }
         public PartialViewResult Deneyim()

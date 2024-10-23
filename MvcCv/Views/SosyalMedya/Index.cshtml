@@ -48,6 +48,7 @@
                                             <th>Derece</th>
                                             <th style="width: 40px">Oran</th>-->
                                             <th>Sosyal Medya</th>
+                                            <th>Durum</th>
                                             <th>Düzenle</th>
                                             <th>Sil</th>
                                         </tr>
@@ -56,36 +57,31 @@
                                         @foreach (var item in Model)
                                         {
                                             <!--if(item.Oran>=0 && item.Oran<=50)
-                                            {
-                                            renk="progress-bar bg-danger";
-                                            labelrenk="badge bg-danger";
-                                            }
-                                            if(item.Oran>=51 && item.Oran<=70)
-                                            {
-                                            renk="progress-bar bg-warning";
-                                            labelrenk="badge bg-warning";
-                                            }
-                                            if(item.Oran>=71 && item.Oran<=84)
-                                            {
-                                            renk="progress-bar bg-primary";
-                                            labelrenk="badge bg-primary";
-                                            }
-                                            if(item.Oran>=85 && item.Oran<=100)
-                                            {
-                                            renk="progress-bar bg-success";
-                                            labelrenk="badge bg-success";
-                                            }
-                                            -->
+        {
+        renk="progress-bar bg-danger";
+        labelrenk="badge bg-danger";
+        }
+        if(item.Oran>=51 && item.Oran<=70)
+        {
+        renk="progress-bar bg-warning";
+        labelrenk="badge bg-warning";
+        }
+        if(item.Oran>=71 && item.Oran<=84)
+        {
+        renk="progress-bar bg-primary";
+        labelrenk="badge bg-primary";
+        }
+             -->
                                             <tr>
                                                 <td>@item.ID</td>
                                                 <td>@item.Ad</td>
                                                 <td>@item.Durum</td>
                                                 <!-- <td>
-                                                <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: item.Oran%"></div>
-                                                </div>
-                                                </td>
-                                                <td><span class="labelrenk">item.Oran%</span></td> -->
+            <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-danger" style="width: item.Oran%"></div>
+            </div>
+            </td>
+            <td><span class="labelrenk">item.Oran%</span></td> -->
 
                                                 <td>
                                                     <a href="/SosyalMedya/SosyalMedyaGetir/@item.ID" class="btn btn-warning btn-sm">
