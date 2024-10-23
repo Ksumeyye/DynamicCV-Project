@@ -17,6 +17,11 @@ namespace MvcCv.Controllers
             var degerler= db.TblHakkimda.ToList(); //degerler adında degisken tanımladım, db.nesnesi içindeki tblhakkimda içinde olan propertyleri bana listelesin diye.
             return View(degerler); //geriye bana degerleri döndur.
         }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalmedya = db.TblSosyalMedya.ToList();
+            return PartialView(sosyalmedya);
+        }
         public PartialViewResult Deneyim()
         {
             var deneyimler=db.TblDeneyimlerim.ToList();

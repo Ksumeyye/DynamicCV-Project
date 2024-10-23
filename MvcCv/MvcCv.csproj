@@ -137,6 +137,7 @@
     <Compile Include="Controllers\iletisimController.cs" />
     <Compile Include="Controllers\ProjeController.cs" />
     <Compile Include="Controllers\SertifikaController.cs" />
+    <Compile Include="Controllers\SosyalMedyaController.cs" />
     <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +179,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TblSertifikalarim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TblSosyalMedya.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TblYeteneklerim.cs">
@@ -2383,6 +2387,9 @@
     <Content Include="Views\Proje\Index.cshtml" />
     <Content Include="Views\Proje\YeniProje.cshtml" />
     <Content Include="Views\Proje\ProjeDuzenle.cshtml" />
+    <Content Include="Views\Default\SosyalMedya.cshtml" />
+    <Content Include="Views\SosyalMedya\Index.cshtml" />
+    <Content Include="Views\SosyalMedya\SayfaGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
