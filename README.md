@@ -1,6 +1,6 @@
 # MVC5 İLE DİNAMİK ADMİN PANELLİ CV SİTESİ PROJESİ
 
-Admin, Deneyim, Eğitim, Hakkımda, Hobi, İletişim, Login, Proje, Sertifika,Sosyal Medya ve Yetenekerimi içinde barındıran Dinamik Cv Web Site Projemdir.<br/>
+Admin, Deneyim, Eğitim, Hakkımda,Hobi, İletişim, Login, Proje, Sertifika,Sosyal Medya ve Yetenekerimi içinde barındıran Dinamik Cv Web Site Projemdir.<br/>
 Admin, CRUD İşlemlerini yapabilir aynı zamanda var olan verileri aktif veya pasif olma durumlarına göre UI tarafında görüntülenmesine karar verebilir.<br/>
 Admin kısmında Modal Popup üzerinden ekleme işlemleri<br/>
 UI tarafındaki İletişim Sayfasından Admin'e mesaj gönderme<br/>
